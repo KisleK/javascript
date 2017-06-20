@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style>
+  .fancy {
+    font-style: italic;
+    text-decoration: underline;
+  }
+</style>
+<body>
+  <p onmousedown="changeParagraph(this)"> First p tag </p>
+  <p onmousedown="changeParagraph(this)"> Second p tag </p>
+  <p onmousedown="changeParagraph(this)"> Third p tag </p>
+  <p onmousedown="changeParagraph(this)"> Fourth p tag </p>
+  
+
+  <button onclick="styleAllParagraphs()"> Toggle paragraph style</button>
+
+  <script>
+    function styleAllParagraphs() {
+      var ptags = document.querySelectorAll("p");
+      for (var i = 0; i < ptags.length; i++) {
+        var ptag = ptags[i];
+        ptag.classList.toggle("fancy");
+      }
+    }
+
+    function changeParagraph(ptag) {
+      console.log(ptag);
+      ptag.style.color = "red";
+    }
+  </script>
+</body>
+</html>
+
+
